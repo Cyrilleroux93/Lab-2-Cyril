@@ -1,0 +1,483 @@
+/* General rules for the website */
+
+body {
+    margin: 0;
+    padding-top: 80px;
+    background-color: beige;
+    font-family: Verdana, Arial, sans-serif;
+    min-height: 100vh;   /* Keep the footer at the bottom */
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+
+/* Rules for the navigation bar*/
+
+.navigation-bar {
+    display: flex;
+    height: 80px;
+    background: linear-gradient(to right, #4f83b5, #73a6d4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.navigation-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #123458;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    width: 270px;
+    border-radius: 0 0 40px 0;
+}
+.navigation-links {
+    display: flex;
+    margin-left: auto;
+}
+.navigation-links a {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    padding: 0 22px;
+    font-size: 17px;
+}
+   
+
+
+.navigation-links a:hover {
+    background-color: #123458;
+}
+
+.navigation-links a:focus {
+    outline: 3px solid black;
+}
+
+
+
+
+
+
+
+
+/* Content with text and image next to each other */
+
+.content-section {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    padding: 60px 50px;
+}
+
+.content-text {
+    flex: 1;
+}
+
+.content-text h1 {
+    font-size: 40px;
+    margin-top: 0;
+    color: #123458;
+}
+
+.content-text h2 {
+    font-size: 24px;
+    margin-top: 35px;
+    color: #123458;
+}
+
+.content-text p {
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+
+/* Images rules */
+
+.content-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.content-image img {
+    width: 350px;
+    max-width: 100%;
+    height: auto;
+    border: 7px solid rgb(41, 4, 4);
+    border-radius: 35px;
+    box-shadow: 0 6px 12px #7a7a7a;
+}
+
+
+/* Text blocks without images */
+
+.text-section {
+    max-width: 1000px;
+    margin: auto;
+    padding: 60px 50px;
+}
+
+/* rules for links inside text */
+
+.text-link {
+    color: #123458;
+    font-weight: bold;
+}
+
+.text-link:hover {
+    color: #4f83b5;
+}
+
+.text-link:focus {
+    outline: 3px solid #222222;
+}
+
+
+/* Rules for text side to side */
+
+.side-text-general {
+    padding: 50px;
+}
+
+.side-text-general h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #123458;
+    margin-bottom: 40px;
+}
+
+
+.side-text {
+    display: flex;
+    gap: 40px;
+}
+
+
+/* boxes in the text side to side */
+
+.info-box {
+    flex: 1;
+    padding: 5px 25px;
+    border-left: 5px solid #222222;
+}
+
+.info-box h3 {
+    font-size: 22px;
+}
+
+.info-box h3 a {
+    color: #123458;
+    text-decoration: none;
+}
+
+.info-box h3 a:hover {
+    color: #4f83b5;
+}
+
+.info-box h3 a:focus {
+    outline: 3px solid #222222;
+}
+
+.info-box p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+
+/* Rule for the skill level (advanced beginner in about me) */
+
+.skill-level {
+    font-weight: bold;
+    color: #123458;
+}
+
+
+/* Rules for the list in about me */
+
+.content-list {
+    padding-left: 25px;
+}
+
+.content-list li {
+    margin-bottom: 30px;
+}
+
+.content-list h3 {
+    color: #123458;
+    margin-bottom: 8px;
+}
+
+.content-list p {
+    margin-top: 0;
+}
+
+
+/* Contact form rules (to be finished) */
+
+.form-section {
+    max-width: 700px;
+    margin: auto;
+    padding: 50px
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 7px;
+    color: black;
+}
+
+.form-group input {
+    padding: 10px;
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 16px;
+    border: 2px solid #4f83b5;
+    border-radius: 5px;
+}
+
+.form-group:focus{
+    outline: 3px solid #123458;
+}
+
+.contact-form button {
+
+    padding: 12px;
+    background-color: #123458;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;}
+
+
+
+
+
+
+/* Footer */
+
+.page-footer {
+    display: flex;
+    background: linear-gradient(to right, #4f83b5, #73a6d4);
+}
+
+.footer-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #123458;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    width: 270px;
+    border-radius: 0 40px 0 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex: 1;
+    padding: 20px;
+}
+
+.footer-navigation,
+.footer-social {
+    display: flex;              
+    flex-direction: column;
+}
+
+.footer-content p {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 0;
+}
+
+.footer-content a {
+    color: white;
+    text-decoration: none;
+    margin-bottom: 8px;
+}
+
+.footer-content a:hover {
+    text-decoration: underline;
+}
+
+.footer-content a:focus {
+    outline: 3px solid #222222;
+}
+
+
+
+@media (max-width: 1000px) {
+
+    body {
+        padding-top: 80px;
+    }
+
+
+
+
+    /* Rules for the content on tablet */
+
+    .content-section {
+        flex-direction: column;
+        gap: 25px;
+        padding: 35px 20px;
+    }
+
+   
+
+    .content-text h1 {
+        font-size: 32px;
+    }
+
+     .navigation-links a {
+        padding: 15px;
+        font-size: 16px;
+    }
+
+
+
+
+
+
+
+    .side-text {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+
+
+
+
+
+
+
+    /* Footer on tablet turn vertical */
+
+    .page-footer {
+        flex-direction: column;
+    }
+
+    .footer-title {
+        padding: 20px;
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+
+
+}
+
+
+
+
+
+
+
+
+/* Phone rules */
+
+@media (max-width: 700px) {
+
+    body {
+        padding-top: 0;
+    }
+
+
+    /* Navigation bar for phones turned vertical */
+
+    .navigation-bar {
+        position: static;
+        height: auto;
+        flex-direction: column;
+    }
+
+    .navigation-title {
+        padding: 20px;
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .navigation-links {
+        margin-left: 0;
+        flex-direction: column;
+    }
+
+    .navigation-links a {
+        padding: 15px;
+        font-size: 16px;
+    }
+
+
+    /* Rules for the content on phones */
+
+    .content-section {
+        flex-direction: column;
+        gap: 25px;
+        padding: 35px 20px;
+    }
+
+   
+
+    .content-text h1 {
+        font-size: 32px;
+    }
+
+
+
+
+
+
+
+    .side-text {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+
+
+
+
+
+
+
+    /* Footer on phone turn vertical */
+
+    .page-footer {
+        flex-direction: column;
+    }
+
+    .footer-title {
+        padding: 20px;
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+
+
+}
