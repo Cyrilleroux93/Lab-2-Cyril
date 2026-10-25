@@ -32,9 +32,63 @@
     </header>
 
 
-    <main>
+<main>
 
-    </main>
+    <section class="text-section">
+        <div class="content-text">
+            <h1>Feedback Form</h1>
+
+            <p>
+                Have a question or suggestion about my portfolio?
+                Feel free to share your feedback using the form below.
+            </p>
+        </div>
+
+    </section>
+<section class="form-section">
+
+    <form class="contact-form">
+
+        <div class="form-group">
+            <label for="full-name">Full Name</label>
+            <input type="text" id="full-name" name="full-name" required minlength="2">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="topic">Topic of Interest</label>
+            <select id="topic" name="topic" required>
+                <option value="">Select a topic</option>
+                <option value="projects">My Projects</option>
+                <option value="skills">My Skills</option>
+                <option value="portfolio">Portfolio Design</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="comments">Comments</label>
+            <textarea id="comments" name="comments" rows="5" minlength="15" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="website">Website (Optional)</label>
+            <input type="url" id="website" name="website">
+        </div>
+
+        <div class="form-buttons">
+           <button type="submit">Submit</button>
+           <button type="reset">Clear</button>
+        </div>
+
+    </form>
+
+</section>
+</main>
 
 
 
