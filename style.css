@@ -454,7 +454,9 @@ main {
         padding: 35px 20px;
     }
 
-   
+   .form-buttons {
+    flex-direction: column;
+    }
 
     .content-text h1 {
         font-size: 32px;
