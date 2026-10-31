@@ -73,11 +73,13 @@
         <div class="form-group">
             <label for="comments">Comments</label>
             <textarea id="comments" name="comments" rows="5" minlength="15" required></textarea>
+                        <p id="character-counter" aria-live="polite">0 / 15 characters (minimum)</p>
         </div>
 
         <div class="form-group">
             <label for="website">Website (Optional)</label>
             <input type="url" id="website" name="website">
+
         </div>
 
         <div class="form-buttons">
@@ -129,6 +131,8 @@
         </div>
 
     </footer>
+
+    <script src="../js/feedback.js"></script>
 
 </body>
 
