@@ -196,7 +196,10 @@ form.addEventListener("submit", function(event) {
         validateWebsite()
     ) {
         successMessage.textContent = "Thanks for your feedback, " + fullName.value.trim() + "!";
-    }});
+
+        setTimeout(function() {successMessage.textContent = ""; }, 4000); }});
+
+
     const clearButton = form.querySelector('button[type="reset"]');
 clearButton.addEventListener("click", function(event) {
     event.preventDefault();
