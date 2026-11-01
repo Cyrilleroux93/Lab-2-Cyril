@@ -10,6 +10,8 @@ const website = document.getElementById("website");
 
 const characterCounter = document.getElementById("character-counter");
 
+const successMessage = document.getElementById("success-message");
+
 
 function validateFullName() {
     const name = fullName.value.trim();
@@ -134,6 +136,10 @@ updateCharacterCounter();
 form.addEventListener("submit", function(event) {
     event.preventDefault();
 
+
+    // Remove previous success message
+    successMessage.textContent = "";
+
     // Validate name
     if (validateFullName()) {
         clearError(fullName);
@@ -169,7 +175,18 @@ form.addEventListener("submit", function(event) {
     } else {
         showError(website, "Please enter a valid URL.");
     }
-});
+
+
+     // Show success message if all is good
+    if (
+        validateFullName() &&
+        validateEmail() &&
+        validateTopic() &&
+        validateComments() &&
+        validateWebsite()
+    ) {
+        successMessage.textContent = "Thanks for your feedback, " + fullName.value.trim() + "!";
+    }});
 
 
 
