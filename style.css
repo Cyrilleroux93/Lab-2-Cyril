@@ -276,6 +276,11 @@ main {
 
 
 
+/*stop the extra space when the error message is not showing*/
+.error-message {
+    margin: 0;
+    color: red;
+}
 
 
 

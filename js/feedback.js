@@ -61,6 +61,63 @@ function updateCharacterCounter() {
         characterCounter.style.color = "green";}}
 
 
+function validateWebsite() {
+    return website.checkValidity();}
+
+
+
+function showError(field, message) {
+    const errorMessage = document.getElementById(field.id + "-error");
+
+    errorMessage.textContent = message;}
+
+function clearError(field) {
+    const errorMessage = document.getElementById(field.id + "-error");
+
+    errorMessage.textContent = "";
+}
+
+
+
+
+fullName.addEventListener("input", function() {
+    if (validateFullName()) {
+        clearError(fullName);
+    } else {
+        showError(fullName, "Please enter a valid name with at least 2 characters.");
+    }});
+
+
+email.addEventListener("input", function() {
+    if (validateEmail()) {
+        clearError(email);
+    } else {
+        showError(email, "Please enter a valid email address.");
+    }
+});
+
+topic.addEventListener("change", function() {
+    if (validateTopic()) {
+        clearError(topic);
+    } else {
+        showError(topic, "Please select a topic.");
+    }});
+
+website.addEventListener("input", function() {
+    if (validateWebsite()) {
+        clearError(website);
+    } else {
+        showError(website, "Please enter a valid URL.");
+    }});
+
+
+
+
+
+
+
+
+
 
 
 
@@ -70,3 +127,55 @@ function updateCharacterCounter() {
         comments.addEventListener("input", updateCharacterCounter);
 
 updateCharacterCounter();
+
+
+
+//Function which validate the different fields
+form.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    // Validate name
+    if (validateFullName()) {
+        clearError(fullName);
+    } else {
+        showError(fullName, "Please enter a valid name with at least 2 characters.");
+    }
+
+    // Validate email address
+    if (validateEmail()) {
+        clearError(email);
+    } else {
+        showError(email, "Please enter a valid email address.");
+    }
+
+    // Validate the topic
+    if (validateTopic()) {
+        clearError(topic);
+    } else {
+        showError(topic, "Please select a topic.");
+    }
+
+    // Validate the omments
+    if (validateComments()) {
+        characterCounter.style.color = "green";
+    } else {
+        characterCounter.style.color = "red";
+        characterCounter.textContent = comments.value.length + " / 15 characters (minimum required)";
+    }
+
+    // Validate that the website has a valid URL but no alert if empty since not required
+    if (validateWebsite()) {
+        clearError(website);
+    } else {
+        showError(website, "Please enter a valid URL.");
+    }
+});
+
+
+
+
+
+
+
+
+
