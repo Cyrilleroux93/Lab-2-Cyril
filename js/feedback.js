@@ -75,9 +75,19 @@ function showError(field, message) {
 
 function clearError(field) {
     const errorMessage = document.getElementById(field.id + "-error");
+    errorMessage.textContent = "";}
 
-    errorMessage.textContent = "";
-}
+
+function resetForm() {
+    form.reset();
+    clearError(fullName);
+    clearError(email);
+    clearError(topic);
+    clearError(website);
+    updateCharacterCounter();
+    successMessage.textContent = "";}
+
+
 
 
 
@@ -187,6 +197,10 @@ form.addEventListener("submit", function(event) {
     ) {
         successMessage.textContent = "Thanks for your feedback, " + fullName.value.trim() + "!";
     }});
+    const clearButton = form.querySelector('button[type="reset"]');
+clearButton.addEventListener("click", function(event) {
+    event.preventDefault();
+    resetForm();});
 
 
 
