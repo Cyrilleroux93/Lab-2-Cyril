@@ -105,8 +105,14 @@ function resetForm() {
     clearError(email);
     clearError(topic);
     clearError(website);
+    const fields = [fullName, email, topic, comments, website];
+    fields.forEach(function(field) {
+        field.classList.remove("valid");
+        field.classList.remove("invalid");
+        field.removeAttribute("aria-invalid");});
     updateCharacterCounter();
-    successMessage.textContent = "";}
+    successMessage.textContent = "";
+}
 
 
 
