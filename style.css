@@ -254,9 +254,24 @@ main {
     border-radius: 5px;
 }
 
-.form-group:focus{
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
     outline: 3px solid #123458;
 }
+
+.form-group .valid {
+    border: 2px solid green;
+}
+.form-group .invalid {
+    border: 2px solid red;
+}
+
+
+
+
+
+
 
 .contact-form button {
 

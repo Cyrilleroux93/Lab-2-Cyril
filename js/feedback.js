@@ -57,10 +57,22 @@ function validateComments() {
 function updateCharacterCounter() {
     const count = comments.value.length;
     characterCounter.textContent = count + " / 15 characters (minimum)";
-    if (count < 15) {
+    if (count === 0) {
+        characterCounter.style.color = "";
+        comments.classList.remove("invalid");
+        comments.classList.remove("valid");
+        comments.removeAttribute("aria-invalid");
+
+    } else if (count < 15) {
         characterCounter.style.color = "red";
+        comments.classList.add("invalid");
+        comments.classList.remove("valid");
+        comments.setAttribute("aria-invalid", "true");
     } else {
-        characterCounter.style.color = "green";}}
+        characterCounter.style.color = "green";
+        comments.classList.add("valid");
+        comments.classList.remove("invalid");
+        comments.setAttribute("aria-invalid", "false");}}
 
 
 function validateWebsite() {
@@ -71,11 +83,20 @@ function validateWebsite() {
 function showError(field, message) {
     const errorMessage = document.getElementById(field.id + "-error");
 
-    errorMessage.textContent = message;}
+    errorMessage.textContent = message;
+    field.classList.add("invalid");
+    field.classList.remove("valid");
+    field.setAttribute("aria-invalid", "true");
+}
 
 function clearError(field) {
     const errorMessage = document.getElementById(field.id + "-error");
-    errorMessage.textContent = "";}
+    errorMessage.textContent = "";
+    field.classList.remove("invalid");
+    field.classList.add("valid");
+    field.setAttribute("aria-invalid", "false");
+}
+
 
 
 function resetForm() {
