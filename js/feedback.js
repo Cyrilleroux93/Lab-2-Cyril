@@ -50,7 +50,10 @@ function validateTopic() {
 function validateComments() {
     const commentText = comments.value.trim();
     if (commentText.length < 15) return false;
-    if (commentText.length > 40) return false;
+    if (commentText.length > 40) return false;git add .
+git commit -m "Added the rules for 40 maximum"
+git push
+
     return true;}
 
 /* Function to update the character counter as the user types */
