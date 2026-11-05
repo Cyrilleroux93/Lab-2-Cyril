@@ -49,15 +49,14 @@ function validateTopic() {
 
 function validateComments() {
     const commentText = comments.value.trim();
-    if (commentText.length < 15) {
-        return false;
-    }
+    if (commentText.length < 15) return false;
+    if (commentText.length > 40) return false;
     return true;}
 
 /* Function to update the character counter as the user types */
 function updateCharacterCounter() {
     const count = comments.value.length;
-    characterCounter.textContent = count + " / 15 characters (minimum)";
+    characterCounter.textContent = count + " characters (minimum 15, maximum 40)";
     if (count === 0) {
         /* make sure that we do not have a red or green text before user start to type */
         characterCounter.style.color = "";
@@ -68,6 +67,11 @@ function updateCharacterCounter() {
 
     } else if (count < 15) {
         characterCounter.style.color = "red";
+        comments.classList.add("invalid");
+        comments.classList.remove("valid");
+        comments.setAttribute("aria-invalid", "true");
+    } else if (count > 40) {
+         characterCounter.style.color = "red";
         comments.classList.add("invalid");
         comments.classList.remove("valid");
         comments.setAttribute("aria-invalid", "true");
@@ -225,7 +229,7 @@ form.addEventListener("submit", function(event) {
         characterCounter.style.color = "green";
     } else {
         characterCounter.style.color = "red";
-        characterCounter.textContent = comments.value.length + " / 15 characters (minimum required)";
+        characterCounter.textContent = comments.value.length + " characters (minimum 15, maximum 40)";
     }
 
     // Validate that the website has a valid URL but no alert if empty since not required
@@ -238,21 +242,19 @@ form.addEventListener("submit", function(event) {
 
      // Show success message if all is good
     if (
-        validateFullName() &&
-        validateEmail() &&
-        validateTopic() &&
-        validateComments() &&
-        validateWebsite()
-    ) {
-        successMessage.textContent = "Thanks for your feedback, " + fullName.value.trim() + "!";
-
-        setTimeout(function() {successMessage.textContent = ""; }, 4000); }});
-
-
-    const clearButton = form.querySelector('button[type="reset"]');
-clearButton.addEventListener("click", function(event) {
-    event.preventDefault();
-    resetForm();});
+    validateFullName() &&
+    validateEmail() &&
+    validateTopic() &&
+    validateComments() &&
+    validateWebsite()
+) {
+    const name = fullName.value.trim();
+    resetForm();
+    successMessage.textContent = "Thanks for your feedback, " + name + "!";
+    setTimeout(function() {
+        successMessage.textContent = "";
+    }, 4000);
+}});
 
 
 
